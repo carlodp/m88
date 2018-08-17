@@ -5,6 +5,9 @@
 	position: relative;
 	margin: 0 0 25px;
 }
+.vip .banner {
+    background: #000000;
+}
 .banner .inner-banner {
 	background-image: url(../images/banner.jpg);
 	background-repeat: no-repeat;
@@ -229,6 +232,12 @@
 		min-width: 0;
 		height: 400px;
 	}
+	.vip .banner .inner-banner {
+		background-image: url(../images/banner-mobile-vip.jpg);
+		background-position: center center;
+		min-width: 0;
+		height: 400px;
+	}
 	.banner .inner-banner .banner-btn {
 		height: 46px;
 		line-height: 46px;
@@ -240,6 +249,9 @@
 }
 @media (max-width: 650px) {
 	.banner .inner-banner {
+		height: 61.53846153846154vw;
+	}
+	.vip .banner .inner-banner {
 		height: 61.53846153846154vw;
 	}
 	.banner .inner-banner .banner-btn {
