@@ -562,6 +562,11 @@ select::-ms-expand {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc975', endColorstr='#bc9c47',GradientType=0 );
 	font-family: avantgardecedemi;
 }
+.vip .redeem-section .inactive .redeem-btn, .vip .redeem-section .inactive .btn {
+	background: #838384;
+	color: #c7c7c8;
+	pointer-events: none;
+}
 .vip .redeem-section .checkout-info .btn {
 	background: #74726e;
 	color: #FFF;
@@ -628,6 +633,9 @@ select::-ms-expand {
 }
 .vip .ledger-section table tbody tr:nth-child(odd) {
     background: #e4c16d;
+}
+.vip .mobile-nav {
+    background: #121d26;
 }
 @media (min-width: 751px) {
 	.logo-wrap {

@@ -281,6 +281,11 @@
 	border: 0;
 	cursor: pointer;
 }
+.redeem-section .inactive .redeem-btn, .redeem-section .inactive .btn {
+	background: #838384;
+	color: #c7c7c8;
+	pointer-events: none;
+}
 .redeem-section .exp-date {
 	display: table;
 	white-space: nowrap;
@@ -670,6 +675,9 @@
 	.redeem-section {
 		padding: 1.3333333333333333vw 1.3333333333333333vw;
 	    min-height: auto;
+	}
+	.redeem-section .free-bet-points {
+		padding: 100px 0;
 	}
 	.redeem-section .free-bet-points p {
 		margin: 20px;
