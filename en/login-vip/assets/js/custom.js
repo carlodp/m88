@@ -150,3 +150,10 @@ $('.ledger-section .view-more').click(function(){
 $(document).on('click', '.ledger-section .back-header', function(){
 	$('.mobile-table-popup').removeClass('active');
 });
+$(window).resize(function(){
+	if($(window).width() > 750) {
+		if($('.mobile-nav-menu').hasClass('nav-menu-open')) {
+			$('.mobile-menu-trigger').click();
+		}
+	}
+});
