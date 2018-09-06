@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="assets/css/slick.css" />
 <script type="text/javascript" src="assets/js/slick.min.js"></script>
 </head>
-<body class="vip">
+<body>
 <header id="header">
 	<div class="inner">
 		<div class="logo-wrap">
@@ -20,20 +20,31 @@
 		</div>
 		<nav id="nav">
 			<ul>
-				<li><a href="free-bet.html">Catalog</a></li>
+				<li><a href="free-bet.html">KATALOG</a></li>
 				<li><a href="about.html">About Reward</a></li>
 				<li><a href="faq.html">FAQ</a></li>
 			</ul>
 		</nav>
-		<div class="usr-wrap">
+		<div class="usr-wrap login-wrap">
+			<div class="fields-wrap">
+				<div class="row">
+					<input type="text" placeholder="Username" class="input-field username-field" />
+					<input type="text" placeholder="Code" class="input-field captcha captcha-field" />
+				</div>
+				<div class="row last">
+					<input type="password" placeholder="Password" class="input-field password-field" />
+					<div class="input-field captcha captcha-img"></div>
+				</div>
+				<a href="#" class="forgot-pass-link">Forgot login details?</a>
+			</div>
 			<div class="btn-wrap">
-				<a href="point-statement.html" role="button" class="mypts-btn">1750 Points</a>
-				<a href="#" role="button" class="logout-btn">LOGOUT</a>
+				<a href="#" role="button" class="logout-btn">LOGIN</a>
+				<a href="https://www.m88.com/Main/Register.aspx" target="_blank" class="signup-link">SIGN UP</a>
 			</div>
 			<div class="chat-service"><a href="#">chat</a></div>
 		</div>
 		<div class="mobile-login-meta">
-			<a href="#" class="account-points">1750 POINTS</a>
+			<a href="#" class="login-meta-btn" onclick="openLoginForm();">LOGIN | SIGN UP</a>
 		</div>
 		<div class="lang-wrap">
 			<div class="lang-inner">
@@ -97,8 +108,8 @@
 				</div>
 				<div class="box">
 					<div class="box-inner">
-						<a href="birthday-gift.html">
-							<div class="bartitle">Birthday Gift</div>
+						<a href="#">
+							<div class="bartitle">VIP</div>
 							<img src="assets/images/item-2.jpg" />
 						</a>
 					</div>
@@ -213,6 +224,19 @@
 			<a href="#"><i class="logout-icon"></i>Logout</a>
 		</li>
 	</ul>	
+</div>
+<div class="loginform-wrap">
+	<form id="loginform">
+		<div class="input-field"><input type="text" placeholder="Username" class="userntxt" /></div>
+		<div class="input-field"><input type="password" placeholder="Password" class="passtxt" /></div>
+		<div class="input-field">
+			<input type="text" placeholder="Code" class="captchatxt" />
+			<span><img src="assets/images/captcha-img.jpg" class="captchaimg" /></span>
+		</div>
+		<div class="input-field"><a href="#" class="forgot-login">Forgot login details</a></div>
+		<a class="login-btn" role="button">LOGIN</a>
+		<a class="register-btn" role="button">JOIN NOW</a>
+	</form>
 </div>
 <script type="text/javascript" src="assets/js/custom.js"></script> 
 <script>
