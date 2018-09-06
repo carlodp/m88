@@ -632,6 +632,15 @@ select::-ms-expand {
 .vip .mobile-nav {
     background: #121d26;
 }
+.vip .mobile-login-meta .account-points {
+    border-color: #c4af6e;
+    color: #c4af6e;
+    background-image: url(../images/vip-profile-icon.png);
+}
+.vip .mobile-nav-menu {
+    background-color: #121d26;
+}
+
 @media (min-width: 751px) {
 	.logo-wrap {
 		display: table-cell;
