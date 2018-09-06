@@ -150,10 +150,27 @@ $('.ledger-section .view-more').click(function(){
 $(document).on('click', '.ledger-section .back-header', function(){
 	$('.mobile-table-popup').removeClass('active');
 });
-$(window).resize(function(){
+function mobileTrigger() {
 	if($(window).width() > 750) {
 		if($('.mobile-nav-menu').hasClass('nav-menu-open')) {
 			$('.mobile-menu-trigger').click();
 		}
+		$('.redeem-section').css('height','');
 	}
+	else {
+		if($('.redeem-section .free-bet-points').length > 0) {
+			if($(window).width() <= 750) {
+				$('.redeem-section').css('height',($(window).height() - ($('#header').outerHeight() + $('.header-section').outerHeight() + $('.meta-control').outerHeight() + $('.cat-nav').outerHeight() + $('.mobile-nav').outerHeight() + 110))+'px');
+			}
+			else {
+				$('.redeem-section').css('height',($(window).height() - ($('#header').outerHeight() + $('.header-section').outerHeight() + $('.meta-control').outerHeight() + $('.cat-nav').outerHeight() + $('.mobile-nav').outerHeight() + 80))+'px');
+			}
+		}
+	}
+}
+$(window).resize(function(){
+	mobileTrigger();
+});
+$(document).ready(function(){
+	mobileTrigger();
 });

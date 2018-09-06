@@ -351,14 +351,27 @@
 	color: #2f4164;
 }
 .redeem-section .free-bet-points {
-	text-align: center;
-	font-size: 18px;
-	line-height: 22px;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+	width: 80%;
 }
 .redeem-section .free-bet-points p {
 	margin: 0 0 35px;
 	line-height: 22px;
 	font-size: 18px;
+}
+.redeem-section .free-bet-points strong {
+	display: inline-block;
+	vertical-align: middle;
+}
+.vip .redeem-section .redeem-btn {
+	width: 150px;
 }
 .redeem-section #redeem-field {
 	width: 130px;
