@@ -894,6 +894,7 @@ form.invalid .small-note {
 	.header-section {
 		margin-bottom: 20px;
 	}
+	/*
 	.redeem-section .item-box {
 		width: 260px;
 		display: block;
@@ -922,6 +923,7 @@ form.invalid .small-note {
 	.redeem-section #redeem-field {
 		margin-bottom: 10px;
 	}
+	*/
 	.catalog-wrap .small-note {
 		margin-bottom: 10px;
 		font-size: 13px;
