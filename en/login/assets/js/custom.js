@@ -10,7 +10,6 @@ var confirmBtnHTML = '<button id="confirm-btn">OK</button><button onclick="alert
 var executed = false;
 function alertBoxClose() {
 	if (executed == false) {
-		console.log(executed,'triggered');
 		$('body').removeClass('active-alert');
 		activeoverlay--;
 		if(activeoverlay <= 0) { $('body').removeClass('active-overlay') }
@@ -33,37 +32,41 @@ function alertBox(msgHTML) {
 		activeoverlay--;
 	}
 	if(activeoverlay <= 0) { $('body').removeClass('active-overlay') }
-}	
-function confirmBox(msgHTML, thisForm) {
+}
+function alertBoxRedemptionSettled() {
+	if($('.alert-box').length <= 0) {
+		$('body').append(msgBoxHTML);
+	}
+	$('.alert-content').html('<img src="assets/images/valid-icon.png" class="valid-icon" />You redemption request is already settled<br/>Please check your balance on Main Wallet');
+	$('.alert-box .button-wrap').html(alertBtnHTML);
+	$('.alert-box').append('<div class="alert-checkbal"><a href="#">Click here</a> to check balance</div>');
+	$('body').addClass('active-alert');
+	if($('body').hasClass('active-alert')) {
+		$('body').addClass('active-overlay');
+		activeoverlay++;
+	}
+	else {
+		activeoverlay--;
+	}
+	if(activeoverlay <= 0) { $('body').removeClass('active-overlay') }
+}
+function isFunction(functionToCheck) {
+	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
+function confirmBox(msgHTML, thisForm, callback) {
 	executed = false;
 	if($('.alert-box').length <= 0) {
 		$('body').append(msgBoxHTML);
 	}
 	$('.alert-content').html(msgHTML);
 	$('.alert-box .button-wrap').html(confirmBtnHTML);
-	$(thisForm).submit(function(e){
-		e.preventDefault();
-		$(document).on('click', '#confirm-btn', function(e){
-			e.preventDefault();
-			$('.checkout-info .row.last span p').remove();
-			$('.checkout-info .row.last textarea').attr('style','');
-			var isEmpty = 0;
-			$('.checkout-info .row.last .required textarea').each(function(){
-				if($(this).val().trim().length < 1 ){
-					var txtAreaPlaceHolder = $(this).attr('placeholder');
-					$(this).css({'border-color':'red'});
-					$('.checkout-info .row.last span').prepend('<p class="checkout-info-error">Please Enter '+txtAreaPlaceHolder+'</p>');
-					isEmpty++;
-				} else { isEmpty-- };	
-			});
-
-			if(isEmpty < 0) {
-				$(thisForm).unbind('submit').submit();
-			}
-			else {
-				alertBoxClose();
-			};		
-		});
+	$(document).on('click', '#confirm-btn', function(e){
+		if(callback) {
+			callback();
+		}
+		else {
+			$(thisForm).unbind('submit').submit();
+		}
 	});
 	$('body').addClass('active-alert');
 	if($('body').hasClass('active-alert')) {
@@ -74,6 +77,32 @@ function confirmBox(msgHTML, thisForm) {
 		activeoverlay--;
 	}
 	if(activeoverlay <= 0) { $('body').removeClass('active-overlay') }
+}
+function redeemItem(itemSel) {
+	if($('body').hasClass('logout')) {
+		alert('Please login first.');
+	}
+	else {
+		executed = false;
+		if($('.alert-box').length <= 0) {
+			$('body').append(msgBoxHTML);
+		}
+		$('.alert-content').html('You requested '+itemSel+' for your Birthday Gift');
+		$('.alert-box .button-wrap').html(confirmBtnHTML);
+		$(document).on('click', '#confirm-btn', function(e){
+			activeoverlay--;
+			alertBox('<img src="assets/images/valid-icon.png" class="valid-icon" />You request has been received. Our customer<br/>service will contact you for verification within 24 hours.');
+		});
+		$('body').addClass('active-alert');
+		if($('body').hasClass('active-alert')) {
+			$('body').addClass('active-overlay');
+			activeoverlay++;
+		}
+		else {
+			activeoverlay--;
+		}
+		if(activeoverlay <= 0) { $('body').removeClass('active-overlay') }
+	}
 }
 function openLoginForm() {
 	$('.loginform-wrap').toggleClass('active');
@@ -168,6 +197,46 @@ function mobileTrigger() {
 		}
 	}
 }
+$("#redeem-item-form").submit(function(e){
+	var thisForm = this;
+	e.preventDefault();
+	confirmBox('Points will be deducted from your account<br/>Do you wish to continue with this transaction?', this, function(){
+		$('.checkout-info .row.last span p').remove();
+		$('.checkout-info .row.last textarea').attr('style','');
+		var isEmpty = 0;
+		$('.checkout-info .row.last .required textarea').each(function(){
+			if($(this).val().trim().length < 1 ){
+				var txtAreaPlaceHolder = $(this).attr('placeholder');
+				$(this).css({'border-color':'red'});
+				$('.checkout-info .row.last span').prepend('<p class="checkout-info-error">Please Enter '+txtAreaPlaceHolder+'</p>');
+				isEmpty++;
+			}
+			else { isEmpty-- };
+		});
+		if(isEmpty < 0) {
+			$(thisForm).unbind('submit').submit();
+		}
+		else {
+			alertBoxClose();
+		}
+	});
+});
+$("#freebet-redeem-form").submit(function(e){
+	e.preventDefault();
+	if($('#redeem-field').val() != "" && !(isNaN($('#redeem-field').val()))) {
+		if(parseInt($('#redeem-field').val()) < parseInt($('#current-pts').val())) {
+			$("#freebet-redeem-form").addClass('invalid');
+			$('.small-note').text('*you do not have enough point to redeem this amount');
+		}
+		else {
+			confirmBox('Points will be deducted from your account<br/>Do you wish to continue with this transaction?', this);
+		}
+	}
+});
+$("#birthday-gift-freebet-form").submit(function(e){
+	e.preventDefault();
+	confirmBox('You requested MYR 100 for your Birthday Gift<br/>Do you wish to continue with this transaction?', this);
+});
 $(window).resize(function(){
 	mobileTrigger();
 });

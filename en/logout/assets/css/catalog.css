@@ -1,11 +1,11 @@
 @charset "utf-8";
 #container > .inner {
-	padding-top: 30px;
+	padding-top: 15px;
 }
 .header-section {
 	display: table;
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 15px;
 }
 .header-section .left-section, .header-section .right-section  {
 	display: table-cell;
@@ -76,24 +76,24 @@
     padding: 0 1px;
 } 
 .cat-nav a {
-	display: block;
-	background: #9aa7bf;
-	color: #FFF;
-	height: 27px;
-	line-height: 27px;
-	width: 140px;
-	text-align: center;
-	cursor: pointer;
-	font-size: 11px;
+    display: block;
+    background: #9aa7bf;
+    color: #FFF;
+    height: 45px;
+    line-height: 45px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
 }
 .cat-nav .active a {
 	background: #58719c;
 }
 .meta-control {
 	background: #58719c;
-	padding: 45px 75px 20px 65px;
+	padding: 20px 75px 20px 65px;
 	color: #FFF;
-	font-size: 16px;
+	font-size: 15px;
 }
 .meta-control .inner {
     display: table;
@@ -162,20 +162,25 @@
 	outline: 0;
 }
 .mypoint-page .meta-control {
-	font-size: 11px;
+	font-size: 13px;
 }
 .mypoint-page .meta-control .datepicker {
-	width: 100px;
-	margin-right: 10px;
-	vertical-align: middle;
+    background-image: url(../images/cal-icon.png);
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    width: 120px;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding: 3px 23px 3px 10px;
+    box-sizing: border-box;
 }
 .mypoint-page .meta-control #search-btn {
 	background: #2f4164;
 	color: #FFF;
 	font-size: 13px;
 	width: 85px;
-	height: 20px;
-	line-height: 20px;
+	height: 25px;
+	line-height: 25px;
 }
 .mypoint-page .meta-control .sort-section span {
 	margin-right: 10px;
@@ -186,7 +191,7 @@
 .redeem-section {
 	position: relative;
 	padding: 100px 75px 45px;
-	min-height: 460px;
+	min-height: 400px;
 	box-sizing: border-box;
 }
 .catalog-redeem-item .redeem-section {
@@ -281,6 +286,10 @@
 	border: 0;
 	cursor: pointer;
 }
+.redeem-section .redeem-btn.disabled, .redeem-section .btn.disabled {
+	background: #5b5c5d;
+	color: #b9b9ba;
+}
 .redeem-section .exp-date {
 	display: table;
 	white-space: nowrap;
@@ -313,10 +322,6 @@
     width: 215px;
     box-sizing: border-box;
     padding-left: 20px;
-}
-.redeem-section .item-box:nth-child(4n) .hover-item-info {
-	right: 38px;
-	transform: translateX(0);
 }
 .redeem-section .item-info-inner, .product-info .item-info-inner { /* TODO */
 	display: block;
@@ -351,14 +356,28 @@
 	color: #2f4164;
 }
 .redeem-section .free-bet-points {
-	text-align: center;
-	font-size: 18px;
-	line-height: 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+	width: 100%;
 }
 .redeem-section .free-bet-points p {
-	margin: 0 0 35px;
+	margin: 0 0 20px;
 	line-height: 22px;
 	font-size: 18px;
+}
+.redeem-section .free-bet-points strong {
+	display: inline-block;
+	vertical-align: middle;
+	color: #2f4164;
+}
+.redeem-section .redeem-btn {
+	width: 150px !important;
 }
 .redeem-section #redeem-field {
 	width: 130px;
@@ -366,11 +385,30 @@
 	line-height: 35px;
 	border: 1px solid #757575;
 	text-align: center;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 35px;
+	font-size: 15px;
+	margin-bottom: 10px;
 	font-family: avantgardecedemi;
 	font-weight: normal;
+}
+.redeem-section #redeem-field::-webkit-input-placeholder {
+   color: #878787;
+   font-style: italic;
+   font-family: 'avantgardecebook';
+}
+.redeem-section #redeem-field:-moz-placeholder {
+   color: #878787;
+   font-style: italic;
+   font-family: 'avantgardecebook';
+}
+.redeem-section #redeem-field::-moz-placeholder {
+   color: #878787;
+   font-style: italic;
+   font-family: 'avantgardecebook';
+}
+.redeem-section #redeem-field:-ms-input-placeholder {  
+   color: #878787;
+   font-style: italic;
+   font-family: 'avantgardecebook';
 }
 .redeem-section .item-img {
 	float: left;
@@ -491,7 +529,7 @@
 .checkout-info .recpt-details {
 	border: 1px solid #757575;
 	padding: 18px 28px;
-	font-size: 11px;
+	font-size: 13px;
 	box-sizing: border-box;
 }
 .checkout-info textarea {
@@ -524,12 +562,16 @@
 	font-size: 0;
 }
 .checkout-info .btn-holder .btn {
+	font-family: avantgardecedemi;
 	display: inline-block;
 	margin: 0 4px;
 	vertical-align: middle;
 }
+.checkout-info .btn-holder .btn.cancel-btn {
+	background: #58719c;
+}
 .checkout-info .balance-info{
-	font-size: 11px;
+	font-size: 13px;
 }
 .checkout-info .red {
 	color: #c81e1e;
@@ -561,7 +603,7 @@
 	padding-left: 0;
 }
 .breadcrumbs li a {
-	font-size: 11px;
+	font-size: 13px;
 	color: #FFF;
 }
 .breadcrumbs li.current a {
@@ -606,9 +648,28 @@
     margin-bottom: 5px;
     color: red;
 }
+.catalog-wrap .small-note {
+	font-size: 14px;
+	color: #2f4164;
+	margin-bottom: 30px;
+}
+form.invalid .small-note {
+	color: #F00;
+	padding: 0 10px;
+}
 @media (min-width: 751px) {
 	.mobile-table-popup {
 		display: none;
+	}
+}
+@media (min-width: 751px) and (max-width: 1350px) {
+	.redeem-section .item-box:nth-child(4n) .hover-item-info {
+		padding-left: 0;
+		padding-right: 20px;
+		transform: translateX(0);
+	}
+	.redeem-section .item-box:nth-child(4n) .item-info-inner {
+		margin-left: -20px;
 	}
 }
 @media (min-width: 751px) and (max-width: 980px) {
@@ -671,12 +732,13 @@
 		padding: 1.3333333333333333vw 1.3333333333333333vw;
 	    min-height: auto;
 	}
-	.redeem-section .free-bet-points {
-		padding: 100px 0;
-	}
 	.redeem-section .free-bet-points p {
-		margin: 20px;
+		margin: 0 0 20px;
 		font-size: 14px;
+		line-height: 14px;
+	}
+	.redeem-section #redeem-field {
+		margin-bottom: 20px;
 	}
 	.redeem-section .item-wrap {
 		margin: 0;
@@ -689,7 +751,7 @@
 		display: inline-block;
 		padding: 1.3333333333333333vw;
 		box-sizing: border-box;
-		font-size: 11px;
+		font-size: 13px;
 	}
 	.redeem-section .thumb-wrap {
 		border: 0.13333333333333333vw solid #757575;
@@ -748,7 +810,7 @@
 	}
 	.redeem-section .redeem-btn, .redeem-section .btn {
 		font-size: 2.933333333333333vw;
-		width: 100%;
+		width: 150px;
 		height: 8vw;
 		line-height: 8vw;
 	}
@@ -822,10 +884,13 @@
 		padding: 0 10px;
 	}
 	.breadcrumbs li.current a {
-		font-size: 11px;
+		font-size: 13px;
 	}
 }
 @media (max-width: 480px) {
+	.alert-box {
+		width: 96%;
+	}
 	.header-section {
 		margin-bottom: 20px;
 	}
@@ -848,5 +913,18 @@
 	.redeem-section .hover-item-info {
 		right: 5.066666666666666vw;
 		transform: translateX(0);
+	}
+	.redeem-section .free-bet-points p {
+		margin: 0 0 10px;
+		font-size: 13px;
+		line-height: 15px;
+	}
+	.redeem-section #redeem-field {
+		margin-bottom: 10px;
+	}
+	.catalog-wrap .small-note {
+		margin-bottom: 10px;
+		font-size: 13px;
+		line-height: 15px;
 	}
 }
