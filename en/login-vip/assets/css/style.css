@@ -139,6 +139,7 @@ select::-ms-expand {
 .usr-wrap .mypts-btn {
 	display: inline-block;
 	border: 2px solid #FFF;
+    padding: 0 15px;
 }
 .usr-wrap .logout-btn {
 	display: inline-block;
@@ -1070,7 +1071,7 @@ select::-ms-expand {
 		white-space: nowrap;
 	}
 	.mobile-login-meta .account-points {
-		padding: 0 70px 0 90px;
+		padding: 0 30px 0 80px;
 	}
 	.lang-wrap {
 		width: 45px;
@@ -1500,7 +1501,7 @@ select::-ms-expand {
 		padding: 0 10.76923076923077vw 0 20.76923076923077vw;
 	}
 	.mobile-login-meta .account-points {
-		padding: 0 10.76923076923077vw 0 13.846153846153847vw;
+		padding: 0 5.769231vw 0 13.846154vw;
 	}
 	.lang-wrap {
 		width: 6.923076923076923vw;
