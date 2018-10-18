@@ -133,13 +133,12 @@ select::-ms-expand {
 	height: 43px;
 	line-height: 43px;
 	padding: 0 25px;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 	vertical-align: middle;
 }
 .usr-wrap .mypts-btn {
 	display: inline-block;
 	border: 2px solid #FFF;
-	padding: 0 15px;
 }
 .usr-wrap .logout-btn {
 	display: inline-block;
