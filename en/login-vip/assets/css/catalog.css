@@ -260,18 +260,45 @@
     max-height: 90%;
 }
 .redeem-section .redeem-pts {
-	position: absolute;
+    position: absolute;
     bottom: 20px;
     right: -1px;
     display: inline-block;
-    background: #ababab;
-    color: #FFF;
+    background: rgba(255, 207, 1, 0.8);
+    color: #000;
     font-size: 15px;
     height: 30px;
     line-height: 30px;
     padding: 0 25px 0 15px;
     z-index: 1;
-	font-weight: bold;
+    font-weight: bold;
+}
+.redeem-section .redeem-pts:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateX(-100%);
+	
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 15px 15px;
+	border-color: transparent transparent rgba(255, 207, 1, 0.8) transparent;
+}
+.redeem-section .redeem-pts:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateX(-100%);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 15px 0;
+	border-color: transparent rgba(255, 207, 1, 0.8) transparent transparent;
 }
 .redeem-section .redeem-btn, .redeem-section .btn {
     display: block;
@@ -729,7 +756,7 @@ form.invalid .small-note {
 		font-size: 15px;
 	}
 	.redeem-section {
-		padding: 1.3333333333333333vw 1.3333333333333333vw;
+		padding: 1.3333333333333333vw 1.3333333333333333vw 25px;
 	    min-height: auto;
 	}
 	.redeem-section .free-bet-points p {
@@ -805,8 +832,8 @@ form.invalid .small-note {
 	}
 	.cat-nav a {
 		font-size: 3.933333vw;
-		height: 6.333333vw;
-		line-height: 6.333333vw;	
+		height: 6.333333333333333vw;
+		line-height: 6.333333333333333vw;
 	}
 	.redeem-section .redeem-btn, .redeem-section .btn {
 		font-size: 2.933333333333333vw;
@@ -815,7 +842,7 @@ form.invalid .small-note {
 		line-height: 8vw;
 	}
 	.redeem-section .exp-date {
-		font-size: 15px;
+		font-size: 2vw;
 	}
 	.redeem-section .item-box:nth-child(2n) .hover-item-info, .redeem-section .item-box:nth-child(4n) .hover-item-info {
 		right: 5.066666666666666vw;
@@ -894,33 +921,25 @@ form.invalid .small-note {
 	.header-section {
 		margin-bottom: 20px;
 	}
+	.redeem-section .redeem-btn {
+		width: 100% !important;
+		font-size: 12px;
+	}
 	.redeem-section .item-box {
-		width: 260px;
-		display: block;
-		margin: 0 auto 20px !important;
-		padding: 0;
+		padding: 10px;
 	}
 	.redeem-section .thumb-wrap {
-		border: 1px solid #757575;
-		width: 260px;
-		height: 195px;
+		width: 100%;
 	}
-	.redeem-section .redeem-btn, .redeem-section .btn {
-		font-size: 14px;
-		height: 40px;
-		line-height: 40px;
+	.redeem-section .exp-date {
+		font-size: 10px;
 	}
-	.redeem-section .hover-item-info {
-		right: 5.066666666666666vw;
-		transform: translateX(0);
+	.redeem-section .exp-date span {
+		padding: 0;
+		text-align: center;
 	}
-	.redeem-section .free-bet-points p {
-		margin: 0 0 10px;
-		font-size: 13px;
-		line-height: 15px;
-	}
-	.redeem-section #redeem-field {
-		margin-bottom: 10px;
+	.redeem-section .exp-date:before, .redeem-section .exp-date:after {
+		display: none;
 	}
 	.catalog-wrap .small-note {
 		margin-bottom: 10px;
