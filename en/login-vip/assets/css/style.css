@@ -1188,6 +1188,15 @@ select::-ms-expand {
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
+	.mobile-nav-menu .birthday-icon{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background-image: url(../images/bday-gift_icon.png);
+		background-size: 85%;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
 	.mobile-nav-menu .desktop-icon {
 		display: inline-block;
 		width: 30px;
